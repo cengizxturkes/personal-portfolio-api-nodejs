@@ -1,4 +1,4 @@
-const APIError = require("../utils/error");
+const APIError = require("../utils/errors");
 
 const errorHandlerMiddleware = (err, req, res, next) => {
   if (err instanceof APIError) {

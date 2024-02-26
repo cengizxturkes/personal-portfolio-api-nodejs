@@ -1,6 +1,6 @@
 const user = require("../models/user.model");
 const bcrypt = require("bcrypt");
-const APIError = require("../utils/error");
+const APIError = require("../utils/errors");
 const Response = require("../utils/response");
 
 const login = async (req, res) => {
