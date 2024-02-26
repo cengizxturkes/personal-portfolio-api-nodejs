@@ -36,8 +36,11 @@ const register = async (req, res) => {
       throw new APIError("Kullanıcı Kayıt Edilemedi !", 400);
     });
 };
-
+const me = async (req, res) => {
+  return new Response(req.user).success(res);
+};
 module.exports = {
   login,
   register,
+  me,
 };
