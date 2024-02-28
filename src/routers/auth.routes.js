@@ -16,9 +16,15 @@ const {
   addSalesController,
   getSalesController,
 } = require("../controllers/sales.controller");
+
+const {
+  addCompanyCategoriesController,
+  getCompanyCategoriesController,
+  addCompanySubCategoriesController,
+  getCompanySubCategoriesController,
+} = require("../controllers/companyCategory.controller");
 const authValidation = require("../middlewares/validations/auth.validation");
 const { tokenCheck } = require("../middlewares/auth");
-const { getRounds } = require("bcrypt");
 
 router.post("/login", authValidation.login, login);
 
@@ -35,5 +41,22 @@ router.post("/addProduct", tokenCheck, addProductController);
 router.get("/getProducts", tokenCheck, getProductsController);
 router.post("/addSales", tokenCheck, addSalesController);
 router.get("/getSales", tokenCheck, getSalesController);
+router.post("/company/addCategory", tokenCheck, addCompanyCategoriesController);
+
+router.get(
+  "/company/getCategories",
+  tokenCheck,
+  getCompanyCategoriesController
+);
+router.get(
+  "/company/getSubCategories",
+  tokenCheck,
+  getCompanySubCategoriesController
+);
+router.post(
+  "/company/addSubCategory",
+  tokenCheck,
+  addCompanySubCategoriesController
+);
 
 module.exports = router;
