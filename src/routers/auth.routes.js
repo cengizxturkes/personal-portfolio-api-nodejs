@@ -15,6 +15,10 @@ const {
   getProductDescriptionsController,
 } = require("../controllers/product.controller");
 const {
+  addAccountPriceController,
+  getAccountPriceController,
+} = require("../controllers/account_price.controller");
+const {
   addSalesController,
   getSalesController,
 } = require("../controllers/sales.controller");
@@ -82,5 +86,6 @@ router.get(
   tokenCheck,
   getProductDescriptionsController
 );
-
+router.post("/addAccountPrice", tokenCheck, addAccountPriceController);
+router.get("/getAccountPrice", tokenCheck, getAccountPriceController);
 module.exports = router;
