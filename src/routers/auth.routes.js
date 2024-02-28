@@ -27,6 +27,10 @@ const {
   addStockController,
   getStockController,
 } = require("../controllers/stock.controller");
+const {
+  addTableController,
+  getTablesController,
+} = require("../controllers/table.controller");
 const authValidation = require("../middlewares/validations/auth.validation");
 const { tokenCheck } = require("../middlewares/auth");
 
@@ -64,4 +68,7 @@ router.post(
 );
 router.post("/company/addStock", tokenCheck, addStockController);
 router.get("/company/getStock", tokenCheck, getStockController);
+router.post("/company/addTable", tokenCheck, addTableController);
+router.get("/company/getTables", tokenCheck, getTablesController);
+
 module.exports = router;
