@@ -23,6 +23,10 @@ const {
   addCompanySubCategoriesController,
   getCompanySubCategoriesController,
 } = require("../controllers/companyCategory.controller");
+const {
+  addStockController,
+  getStockController,
+} = require("../controllers/stock.controller");
 const authValidation = require("../middlewares/validations/auth.validation");
 const { tokenCheck } = require("../middlewares/auth");
 
@@ -58,5 +62,6 @@ router.post(
   tokenCheck,
   addCompanySubCategoriesController
 );
-
+router.post("/company/addStock", tokenCheck, addStockController);
+router.get("/company/getStock", tokenCheck, getStockController);
 module.exports = router;
