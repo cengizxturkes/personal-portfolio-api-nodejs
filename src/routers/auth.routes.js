@@ -11,6 +11,8 @@ const {
 const {
   addProductController,
   getProductsController,
+  addProductDescriptionController,
+  getProductDescriptionsController,
 } = require("../controllers/product.controller");
 const {
   addSalesController,
@@ -70,5 +72,15 @@ router.post("/company/addStock", tokenCheck, addStockController);
 router.get("/company/getStock", tokenCheck, getStockController);
 router.post("/company/addTable", tokenCheck, addTableController);
 router.get("/company/getTables", tokenCheck, getTablesController);
+router.post(
+  "/addProductDescription",
+  tokenCheck,
+  addProductDescriptionController
+);
+router.get(
+  "/getProductDescriptions",
+  tokenCheck,
+  getProductDescriptionsController
+);
 
 module.exports = router;

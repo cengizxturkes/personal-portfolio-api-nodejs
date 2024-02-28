@@ -49,7 +49,6 @@ const generateQRCode = async (data) => {
       { type: "image/png", rendererOpts: { quality: 0.3 } },
       (err, url) => {
         if (err) reject(err);
-        // Remove data URL prefix
         const base64Data = url.replace(/^data:image\/png;base64,/, "");
         resolve(base64Data);
       }
