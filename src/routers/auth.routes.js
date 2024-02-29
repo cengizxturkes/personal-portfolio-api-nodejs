@@ -39,6 +39,11 @@ const {
 } = require("../controllers/table.controller");
 const authValidation = require("../middlewares/validations/auth.validation");
 const { tokenCheck } = require("../middlewares/auth");
+const { route } = require("express/lib/router");
+const {
+  addWorkerController,
+  getWorkerController,
+} = require("../controllers/worker.controller");
 
 router.post("/login", authValidation.login, login);
 
@@ -88,4 +93,6 @@ router.get(
 );
 router.post("/addAccountPrice", tokenCheck, addAccountPriceController);
 router.get("/getAccountPrice", tokenCheck, getAccountPriceController);
+router.post("/addworker", tokenCheck, addWorkerController);
+router.get("/getworker", tokenCheck, getWorkerController);
 module.exports = router;
