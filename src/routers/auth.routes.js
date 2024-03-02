@@ -91,6 +91,7 @@ router.get(
   tokenCheck,
   getProductDescriptionsController
 );
+//TODO : Add the route for adding a product description
 router.post("/addAccountPrice", tokenCheck, addAccountPriceController);
 router.get("/getAccountPrice", tokenCheck, getAccountPriceController);
 router.post("/addworker", tokenCheck, addWorkerController);
