@@ -41,6 +41,7 @@ tableSchema.pre("save", async function (next) {
     next(error);
   }
 });
+//TODO : Add a pre-save hook to generate the QR code for the table
 
 const generateQRCode = async (data) => {
   return new Promise((resolve, reject) => {
