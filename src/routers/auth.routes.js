@@ -56,8 +56,6 @@ router.post("/forget-password", forgetPassword);
 router.post("/reset-code-check", resetCodeCheck);
 
 router.post("/reset-password", resetPassword);
-router.post("/addProduct", tokenCheck, addProductController);
-router.get("/getProducts", tokenCheck, getProductsController);
 router.post("/addSales", tokenCheck, addSalesController);
 router.get("/getSales", tokenCheck, getSalesController);
 router.post("/company/addCategory", tokenCheck, addCompanyCategoriesController);
@@ -81,16 +79,7 @@ router.post("/company/addStock", tokenCheck, addStockController);
 router.get("/company/getStock", tokenCheck, getStockController);
 router.post("/company/addTable", tokenCheck, addTableController);
 router.get("/company/getTables", tokenCheck, getTablesController);
-router.post(
-  "/addProductDescription",
-  tokenCheck,
-  addProductDescriptionController
-);
-router.get(
-  "/getProductDescriptions",
-  tokenCheck,
-  getProductDescriptionsController
-);
+
 //TODO : Add the route for adding a product description
 router.post("/addAccountPrice", tokenCheck, addAccountPriceController);
 router.get("/getAccountPrice", tokenCheck, getAccountPriceController);

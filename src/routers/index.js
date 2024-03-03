@@ -5,9 +5,9 @@ const APIError = require("../utils/errors");
 const Response = require("../utils/response");
 
 const auth = require("./auth.routes");
-
+const product = require("./product.routes");
 router.use(auth);
-
+router.use(product);
 router.post("/upload", function (req, res) {
   upload(req, res, function (err) {
     if (err instanceof multer.MulterError)
